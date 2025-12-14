@@ -62,19 +62,6 @@
 - 在搜索框中输入关键词进行搜索
 - 使用分类下拉框筛选特定分类的提示词
 
-## 项目结构
-
-```
-prompt-helper-extension/
-├── src/
-│   ├── extension.ts      # 插件主入口
-│   ├── promptManager.ts  # 提示词管理器
-│   └── promptPanel.ts    # 提示词面板UI
-├── package.json          # 插件配置
-├── tsconfig.json         # TypeScript配置
-└── README.md            # 说明文档
-```
-
 ## 开发说明
 
 ### 技术栈
@@ -106,4 +93,5 @@ prompt-helper-extension/
 ## 许可证
 
 MIT License
+
 
