@@ -1,0 +1,164 @@
+{
+  "name": "prompt-helper",
+  "displayName": "提示词助手 - Prompt Helper",
+  "description": "为开发者提供精准的提示词，支持上传、排序和共享，帮助更好地表达开发想法",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:promptHelper.openPanel",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promptHelper.openPanel",
+        "title": "打开提示词助手"
+      },
+      {
+        "command": "promptHelper.insertPrompt",
+        "title": "选择提示词用于AI对话"
+      },
+      {
+        "command": "promptHelper.quickSendToAI",
+        "title": "快速发送代码上下文到AI"
+      },
+      {
+        "command": "promptHelper.addPrompt",
+        "title": "添加新提示词"
+      },
+      {
+        "command": "promptHelper.fetchPrompts",
+        "title": "从网络获取常用提示词"
+      },
+      {
+        "command": "promptHelper.showSuggestions",
+        "title": "显示提示词建议"
+      },
+      {
+        "command": "promptHelper.quickInsert",
+        "title": "快速插入提示词"
+      },
+      {
+        "command": "promptHelper.viewFavorites",
+        "title": "查看收藏的提示词"
+      },
+      {
+        "command": "promptHelper.generateFromCode",
+        "title": "基于代码生成提示词"
+      },
+      {
+        "command": "promptHelper.uploadPrompt",
+        "title": "上传提示词到云端"
+      },
+      {
+        "command": "promptHelper.downloadPrompts",
+        "title": "从云端下载提示词"
+      },
+      {
+        "command": "promptHelper.smartRecommend",
+        "title": "智能推荐提示词"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "promptHelper.openPanel",
+          "title": "提示词助手: 打开面板"
+        },
+        {
+          "command": "promptHelper.addPrompt",
+          "title": "提示词助手: 添加新提示词"
+        },
+        {
+          "command": "promptHelper.fetchPrompts",
+          "title": "提示词助手: 从网络获取常用提示词"
+        },
+        {
+          "command": "promptHelper.showSuggestions",
+          "title": "提示词助手: 显示提示词建议"
+        },
+        {
+          "command": "promptHelper.quickInsert",
+          "title": "提示词助手: 快速插入提示词"
+        },
+        {
+          "command": "promptHelper.viewFavorites",
+          "title": "提示词助手: 查看收藏的提示词"
+        },
+        {
+          "command": "promptHelper.generateFromCode",
+          "title": "提示词助手: 基于代码生成提示词"
+        },
+        {
+          "command": "promptHelper.uploadPrompt",
+          "title": "提示词助手: 上传提示词到云端"
+        },
+        {
+          "command": "promptHelper.downloadPrompts",
+          "title": "提示词助手: 从云端下载提示词"
+        },
+        {
+          "command": "promptHelper.smartRecommend",
+          "title": "提示词助手: 智能推荐提示词"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "promptHelper.insertPrompt",
+          "when": "editorTextFocus",
+          "group": "promptHelper"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "promptHelperView",
+          "name": "提示词助手",
+          "when": "true"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "promptHelper",
+          "title": "提示词助手",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "promptHelper.quickInsert",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "promptHelper.showSuggestions",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {}
+}
+
